@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Marc Görtz</string>
+	<key>description</key>
+	<string>Sets your Adium and Skype status simultaneously to Online, Offline, Away, DND or lunch.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>[MG] Set instant messaging status v1.0</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	--available status
+	if q = "online" then
+		tell application "Adium" to go available
+		tell application "Skype"
+			send command "SET USERSTATUS ONLINE" script name "Alfred"
+		end tell
+	end if
+
+	--offline status
+	if q = "offline" then
+		tell application "Adium" to go offline
+		tell application "Skype"
+			send command "SET USERSTATUS OFFLINE" script name "Alfred"
+		end tell
+	end if
+
+	--away status
+	if q = "away" then
+		tell application "Adium" to go away
+		tell application "Skype"
+			send command "SET USERSTATUS AWAY" script name "Alfred"
+		end tell
+	end if
+
+	--special away (lunch) status
+	if q = "lunch" then
+		tell application "Adium"
+			go away
+			set status message of every account to "🍴"
+		end tell
+		tell application "Skype"
+			send command "SET USERSTATUS AWAY" script name "Alfred"
+		end tell
+	end if
+
+	--special away (do not disturb) status
+	if q = "dnd" then
+		tell application "Adium"
+			go away
+			set status message of every account to "Bitte nicht stören. 🙈🙉🙊"
+		end tell
+		tell application "Skype"
+			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+	end if
+
+	--special away (meeting) status
+	if q = "meeting" then
+		tell application "Adium"
+			go away
+			set status message of every account to "Meeting 👔"
+		end tell
+		tell application "Skype"
+			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+	end if
+
+	--special away (deploy) status
+	if q = "deploy" then
+		tell application "Adium"
+			go away
+			set status message of every account to "Deploy"
+		end tell
+		tell application "Skype"
+			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+	end if
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>status</string>
+				<key>subtext</key>
+				<string>Either "online", "offline", "away", "dnd", "lunch", "meeting", or "deploy".</string>
+				<key>text</key>
+				<string>Set instant messaging status</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://marcgoertz.de/</string>
+</dict>
+</plist>
