@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.alfred2.workflows.mg.imstatus</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
@@ -23,11 +25,11 @@
 	<key>createdby</key>
 	<string>Marc Görtz</string>
 	<key>description</key>
-	<string>Sets your Adium and Skype status simultaneously to Online, Offline, Away, DND or lunch.</string>
+	<string>Sets your HipChat and Skype status simultaneously to Online, Offline, Away, DND or lunch.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>[MG] Set instant messaging status v1.0</string>
+	<string>[MG] Set instant messaging status v1.2</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -38,15 +40,19 @@
 
 	--available status
 	if q = "online" then
-		tell application "Adium" to go available
 		tell application "Skype"
 			send command "SET USERSTATUS ONLINE" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Available" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 
 	--offline status
 	if q = "offline" then
-		tell application "Adium" to go offline
 		tell application "Skype"
 			send command "SET USERSTATUS OFFLINE" script name "Alfred"
 		end tell
@@ -54,53 +60,66 @@
 
 	--away status
 	if q = "away" then
-		tell application "Adium" to go away
 		tell application "Skype"
 			send command "SET USERSTATUS AWAY" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Away" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 
 	--special away (lunch) status
 	if q = "lunch" then
-		tell application "Adium"
-			go away
-			set status message of every account to "🍴"
-		end tell
 		tell application "Skype"
 			send command "SET USERSTATUS AWAY" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Away" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 
 	--special away (do not disturb) status
 	if q = "dnd" then
-		tell application "Adium"
-			go away
-			set status message of every account to "Bitte nicht stören. 🙈🙉🙊"
-		end tell
 		tell application "Skype"
 			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Do Not Disturb" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 
 	--special away (meeting) status
 	if q = "meeting" then
-		tell application "Adium"
-			go away
-			set status message of every account to "Meeting 👔"
-		end tell
 		tell application "Skype"
 			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Do Not Disturb" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 
 	--special away (deploy) status
 	if q = "deploy" then
-		tell application "Adium"
-			go away
-			set status message of every account to "Deploy"
-		end tell
 		tell application "Skype"
 			send command "SET USERSTATUS DND" script name "Alfred"
+		end tell
+		tell application "System Events" to tell UI element "HipChat" of list 1 of process "Dock"
+			perform action "AXShowMenu"
+			delay 0.5
+			click menu item "Status" of menu 1
+			click menu item "Do Not Disturb" of menu 1 of menu item "Status" of menu 1
 		end tell
 	end if
 

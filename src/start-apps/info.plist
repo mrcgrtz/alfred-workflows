@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.alfred2.workflows.mg.start</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>C0599899-ADDA-4673-96A5-3A353EF86396</key>
@@ -24,18 +26,50 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>47EEACE8-3C09-4D73-8F28-FF9B9657C3D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Marc Görtz</string>
 	<key>description</key>
-	<string></string>
+	<string>Starts default productivity apps and sites.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>[MG] Start default apps v1.1</string>
+	<string>[MG] Start default apps v1.2</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Dropbox.app</string>
+					<string>/Applications/Tictoc.app</string>
+					<string>/Applications/Mail.app</string>
+					<string>/Applications/Skype.app</string>
+					<string>/Applications/Utilities/Terminal.app</string>
+					<string>/Applications/Tweetbot.app</string>
+					<string>/Applications/HipChat.app</string>
+					<string>/Applications/Sublime Text.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -58,30 +92,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Dropbox.app</string>
-					<string>/Applications/Tictoc.app</string>
-					<string>/Applications/Mail.app</string>
-					<string>/Applications/Skype.app</string>
-					<string>/Applications/Adium.app</string>
-					<string>/Applications/Sublime Text 2.app</string>
-					<string>/Applications/Utilities/Terminal.app</string>
-					<string>/Applications/Tweetbot.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>plusspaces</key>
 				<false/>
 				<key>url</key>
@@ -96,6 +106,23 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://plus.google.com/</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>47EEACE8-3C09-4D73-8F28-FF9B9657C3D2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -105,6 +132,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>190</real>
+		</dict>
+		<key>47EEACE8-3C09-4D73-8F28-FF9B9657C3D2</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
 		</dict>
 		<key>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</key>
 		<dict>

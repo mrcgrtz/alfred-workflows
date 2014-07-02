@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.alfred2.workflows.mg.down</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
@@ -25,7 +27,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>[MG] Down For Everyone? v1.0</string>
+	<string>[MG] Down For Everyone? v1.1</string>
 	<key>objects</key>
 	<array>
 		<dict>

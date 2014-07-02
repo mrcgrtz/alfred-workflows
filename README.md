@@ -10,10 +10,11 @@ These are some personal Alfred workflows I use on a regular basis.
    [Dropbox](https://www.dropbox.com/),
    [Mail](https://www.apple.com/de/osx/apps/),
    [Skype](http://www.skype.com/),
-   [Adium](https://adium.im/),
-   [Sublime Text](http://www.sublimetext.com/),
+   [HipChat](https://www.hipchat.com/),
+   [Sublime Text 3](http://www.sublimetext.com/),
    [Terminal](https://www.apple.com/de/osx/apps/),
    [Tweetbot](http://tapbots.com/software/tweetbot/mac/),
+   [Pomodoro Timer](https://itunes.apple.com/de/app/pomodoro-timer-focus-on-your/id872515009?mt=12)
    and [Tictoc](http://overcommitted.com/tictoc/).
 
  * **Down For Everyone?**<br>
@@ -22,7 +23,7 @@ These are some personal Alfred workflows I use on a regular basis.
 
  * **Set instant messaging status**<br>
    Keyword: `status`<br>
-   Sets your Adium and Skype status simultaneously to Online, Offline,
+   Sets your HipChat and Skype status simultaneously to Online, Offline,
    Away, DND or special away messages for lunch, meetings or
    deployments.
 
