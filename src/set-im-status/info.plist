@@ -69,6 +69,9 @@
 			click menu item "Status" of menu 1
 			click menu item "Away" of menu 1 of menu item "Status" of menu 1
 		end tell
+		tell application "System Events"
+			start current screen saver
+		end tell
 	end if
 
 	--special away (lunch) status
@@ -81,6 +84,9 @@
 			delay 0.5
 			click menu item "Status" of menu 1
 			click menu item "Away" of menu 1 of menu item "Status" of menu 1
+		end tell
+		tell application "System Events"
+			start current screen saver
 		end tell
 	end if
 
